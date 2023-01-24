@@ -33,8 +33,8 @@ const SIZES = {
 };
 
 const StyledButton = styled.button`
-  border: 0;
-  border-radius: 8em;
+  border: solid red 10px;
+  border-radius: 3em;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
@@ -53,6 +53,7 @@ const StyledButton = styled.button`
 
 
   font-size: ${props => (props.size === SIZES.SMALL ? typography.size.s1 : typography.size.s2)}px;
+  font-size: 25px;
   font-weight: ${typography.weight.extrabold};
   line-height: 1;
 
@@ -69,11 +70,11 @@ const StyledButton = styled.button`
       }
 
       &:focus {
-        box-shadow: ${rgba(color.secondary, 0.4)} 0 1px 9px 2px;
+        box-shadow: ${rgba(color.primary, 0.4)} 0 1px 9px 2px;
       }
 
       &:focus:hover {
-        box-shadow: ${rgba(color.secondary, 0.2)} 0 8px 18px 0px;
+        box-shadow: ${rgba(color.primary, 0.2)} 0 8px 18px 0px;
       }
     `}
 
@@ -163,7 +164,7 @@ const StyledButton = styled.button`
             background: ${darken(0.05, color.primary)};
           }
           &:active {
-            box-shadow: rgba(67, 134, 200, 0.1) 0 0 0 3em inset;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
           }
           &:focus {
             box-shadow: ${rgba(color.primary, 0.4)} 0 1px 9px 2px;
@@ -178,7 +179,7 @@ const StyledButton = styled.button`
     props.appearance === APPEARANCES.SECONDARY &&
     `
       background: ${color.secondary};
-      color: ${color.ultraviolet};
+      color: ${color.lightest};
 
       ${!props.isLoading &&
         `
